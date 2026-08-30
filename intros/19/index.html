@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+<!-- Robust Anti-Reload (Blocking Live Server) -->
+<script>
+(function() {
+    const block = (m) => console.log("Blocking reload attempt: " + m);
+    try {
+        // Simple override
+        window.location.reload = function() { block("location.reload"); };
+        window.history.go = function() { block("history.go"); };
+        window.location.replace = function() { block("location.replace"); };
+        
+        // Prevent meta refresh
+        const preventRefresh = () => {
+            const refresh = document.querySelector('meta[http-equiv="refresh"]');
+            if (refresh) {
+                console.log("Blocking meta refresh");
+                refresh.remove();
+            }
+        };
+        setInterval(preventRefresh, 1000);
+
+        // Block beforeunload popup if it exists
+        window.addEventListener('beforeunload', (event) => {
+            event.stopImmediatePropagation();
+        }, true);
+
+    } catch(e) { console.error("Reload fix error:", e); }
+})();
+</script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+
+    <meta name="generator" content="Scirra Construct" />
+    
+    <meta name="author" content="HSINI">
+    <link rel="manifest" href="appmanifest.json" />
+
+
+    <link rel="stylesheet" href="style.css" />
+  
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": [
+    "VideoGame",
+    "SoftwareApplication"
+  ],
+  "name": "Stick Duel Battle",
+  "description": "Play Stick Duel Battle online for free. Unblocked and available on all devices. Experience the best Stick Duel Battle gameplay now!",
+  "url": "https://unlockedgames.io/stick-duel-battle/",
+  "applicationCategory": "Game",
+  "operatingSystem": "Any",
+  "genre": "Arcade",
+  "inLanguage": "en",
+  "isAccessibleForFree": true
+}</script>
+
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": [
+    "VideoGame",
+    "SoftwareApplication"
+  ],
+  "name": "Stick Duel Battle",
+  "description": "Play Stick Duel Battle online for free. Unblocked and available on all devices. Experience the best Stick Duel Battle gameplay now!",
+  "url": "https://unlockedgames.io/stick-duel-battle/",
+  "applicationCategory": "Game",
+  "operatingSystem": "Any",
+  "genre": "Arcade",
+  "inLanguage": "en",
+  "isAccessibleForFree": true
+}</script>
+
+    <meta property="og:title" content="Stick Duel Battle - Play Online for Free">
+    <meta property="og:description" content="Play Stick Duel Battle online for free. Unblocked and available on all devices. Experience the best Stick Duel Battle gameplay now!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unlockedgames.io/stick-duel-battle/">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": [
+    "VideoGame",
+    "SoftwareApplication"
+  ],
+  "name": "Stick Duel Battle",
+  "description": "Play Stick Duel Battle online for free. Unblocked and available on all devices. Experience the best Stick Duel Battle gameplay now!",
+  "url": "https://unlockedgames.io/stick-duel-battle/",
+  "applicationCategory": "Game",
+  "operatingSystem": "Any",
+  "genre": "Arcade",
+  "inLanguage": "en",
+  "isAccessibleForFree": true
+}</script>
+
+    <meta property="og:title" content="Stick Duel Battle - Play Online for Free">
+    <meta property="og:description" content="Play Stick Duel Battle online for free. Unblocked and available on all devices. Experience the best Stick Duel Battle gameplay now!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unlockedgames.io/stick-duel-battle/">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": [
+    "VideoGame",
+    "SoftwareApplication"
+  ],
+  "name": "Stick Duel Battle",
+  "description": "Play Stick Duel Battle online for free. Unblocked and available on all devices. Experience the best Stick Duel Battle gameplay now!",
+  "url": "https://unlockedgames.io/stick-duel-battle/",
+  "applicationCategory": "Game",
+  "operatingSystem": "Any",
+  "genre": "Arcade",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "HSINI"
+  }
+}</script>
+
+    <meta property="og:title" content="Stick Duel Battle - Play Online for Free">
+    <meta property="og:description" content="Play Stick Duel Battle online for free. Unblocked and available on all devices. Experience the best Stick Duel Battle gameplay now!">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://unlockedgames.io/stick-duel-battle/">
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": [
+    "VideoGame",
+    "SoftwareApplication"
+  ],
+  "name": "Stick Duel Battle",
+  "description": "Play Stick Duel Battle online for free. Unblocked and available on all devices. Experience the best Stick Duel Battle gameplay now!",
+  "url": "https://unlockedgames.io/stick-duel-battle/",
+  "applicationCategory": "Game",
+  "operatingSystem": "Any",
+  "genre": "Arcade",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Person",
+    "name": "HSINI"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "hsinidev"
+  }
+}</script>
+</head>
+  <body>
+    <script>
+      if (location.protocol.substr(0, 4) === "file") {
+        alert("Web exports won't work until you upload them. (When running on the file: protocol, browsers block many features from working for security reasons.)");
+      }
+    </script>
+    <script src="box2d.wasm.js"></script>
+    <noscript>
+      <div id="notSupportedWrap">
+        <h2 id="notSupportedTitle">This content requires JavaScript</h2>
+        <p class="notSupportedMessage">JavaScript appears to be disabled. Please enable it to view this content.</p>
+      </div>
+    </noscript>
+    <script src="/js/main.js"></script>
+    <script src="scripts/supportcheck.js"></script>
+    <script src="scripts/offlineclient.js" type="module"></script>
+    <script src="scripts/main.js" type="module"></script>
+    <script src="scripts/register-sw.js" type="module"></script>
+  
+<!-- SEO CONTENT (Hidden) -->
+<div class="seo-generated-content" style="display:none; visibility:hidden;">
+<h2>Stick Duel Battle Guide</h2>
+
+<h3>Game Overview</h3>
+<p>Stick Duel Battle is a popular browser game that challenges players to engage in fast-paced duels with their fingers.</p>
+
+<h3>How to Play</h3>
+<p>To play Stick Duel Battle, follow these steps:</p>
+<ul>
+<li><strong>Create an account</strong>: Sign up for an account on the game's website to participate.</li>
+<li><strong>Choose your character</strong>: Select a character from one of the available options.</li>
+<li><strong>Select your duel mode</strong>: Choose between one-on-one and multiplayer duels.</li>
+<li><strong>Start dueling</strong>: Click on the start button to begin the duel.</li>
+</ul>
+
+<h3>Tips and Tricks for Success</h3>
+<p>In order to succeed in Stick Duel Battle, here are some valuable tips:</p>
+<ul>
+<li><strong>Master your character's abilities</strong>: Each character has unique moves that can be used strategically.</li>
+<li><strong>Pay attention to the opponent's actions</strong>: Observe your opponent's behavior and plan accordingly.</li>
+<li><strong>Use the environment to your advantage</strong>: Take into account obstacles and terrain when dueling.</li>
+<li><strong>Stay calm under pressure</strong>: Keep a cool head during intense duels to make better decisions.</li>
+</ul>
+
+<h3>Why You Should Play It</h3>
+<p>Stick Duel Battle offers numerous benefits that set it apart from other browser games:</p>
+<ul>
+<li><strong>Relaxing and entertaining</strong>: Engage in a fun and calming experience without requiring intense focus.</li>
+<li><strong>Improved hand-eye coordination</strong>: Practice your finger dexterity and reaction time through the game's mechanics.</li>
+<li><strong>Social features</strong>: Compete with friends or other players to improve your skills.</li>
+<li><strong>Cheap to play</strong>: Stick Duel Battle is accessible on a budget, making it an excellent choice for casual gamers.</li>
+</ul>
+
+<h2>About the Developers</h2>
+<p>The game was developed by a small team of enthusiasts with a passion for creating engaging browser games.</p>
+<p>Stick Duel Battle has received positive reviews from players and critics alike, praising its addictive gameplay and challenging duels.</p>
+<p>The developers continue to update the game with new features and content to keep players engaged.</p>
+</div>
+<script>
+    // Silently block specific Live Server reload triggers if possible
+    
+</script>
+</body>
+</html>
